@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Bake Track</string>
+    <string name="ingredients_title">Ingredients</string>
+    <string name="steps_title">Steps</string>
+    <string name="step_number_format">Step %1$d</string>
+    <string name="network_error_recipes">Error Fetching Recipes</string>
+    <string name="appwidget_text">Recipe Ingredient List</string>
+
+    <string name="INSTANCE_KEY_ADAPTER_POSITION">instance_key_adapter_position</string>
+    <string name="INSTANCE_KEY_RECIPE">instance_key_recipe</string>
+    <string name="INSTANCE_KEY_INGREDIENTS_ID">instance_key_ingredients_id</string>
+    <string name="INSTANCE_KEY_INGREDIENTS_COUNT">instance_key_ingredients_count</string>
+    <string name="INSTANCE_KEY_STEPS">instance_key_steps</string>
+    <string name="INSTANCE_KEY_RECIPE_LIST">instance_key_recipe_list</string>
+
+    <string name="BUNDLE_RECIPE_DATA">com.goddardlabs.baketracker.data</string>
+    <string name="RECIPE_WIDGET_ACTION_UPDATE">com.goddardlabs.baketrack.action.update</string>
+    <string name="BUNDLE_RECIPE_WIDGET_DATA">com.goddardlabs.baketrack.recipe_widget_data</string>
+    <string name="BUNDLE_STEP_DATA">com.goddardlabs.baketrack.step_data</string>
+    <string name="BUNDLE_CURRENT_RECIPE">com.goddardlabs.baketrack.current_recipe</string>
+    <string name="BUNDLE_CURRENT_STEP">com.goddardlabs.baketrack.current_step</string>
+</resources>
