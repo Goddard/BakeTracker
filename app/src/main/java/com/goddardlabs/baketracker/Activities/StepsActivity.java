@@ -29,12 +29,12 @@ public class StepsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_step_viewpager);
 
-        final ArrayList<Step> stepList = getIntent().getExtras().getParcelableArrayList(getString(R.string.BUNDLE_STEP_DATA));
-        final int currentStep = getIntent().getExtras().getInt(getString(R.string.BUNDLE_CURRENT_STEP));
-        String currentRecipeName = getIntent().getExtras().getString(getString(R.string.BUNDLE_CURRENT_RECIPE));
+        final ArrayList<Step> stepList = getIntent().getExtras().getParcelableArrayList(getString(R.string.STEP_DATA));
+        final int currentStep = getIntent().getExtras().getInt(getString(R.string.CURRENT_STEP));
+        String currentRecipeName = getIntent().getExtras().getString(getString(R.string.CURRENT_RECIPE));
 
-        setSupportActionBar(binding.tbToolbar.toolbar);
-        binding.tbToolbar.toolbar.setTitle(currentRecipeName);
+//        setSupportActionBar(binding.toolbar_include_container.toolbar);
+//        binding.toolbar_include_container.toolbar.setTitle(currentRecipeName);
 
         TabLayout tabLayout = findViewById(R.id.tl_activity_step_viewpager);
         for(Step step : stepList) {
@@ -51,7 +51,7 @@ public class StepsActivity extends AppCompatActivity {
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            binding.tbToolbar.toolbar.setVisibility(View.GONE);
+//            binding.toolbar_include_container.toolbar.setVisibility(View.GONE);
             binding.tlActivityStepViewpager.setVisibility(View.GONE);
         }
 
@@ -61,7 +61,7 @@ public class StepsActivity extends AppCompatActivity {
             @Override
             public Fragment getItem(int position) {
                 Bundle stepBundle = new Bundle();
-                stepBundle.putParcelable(getString(R.string.BUNDLE_STEP_DATA), stepList.get(position));
+                stepBundle.putParcelable(getString(R.string.STEP_DATA), stepList.get(position));
                 StepFragment stepFragment = new StepFragment();
                 stepFragment.setArguments(stepBundle);
 

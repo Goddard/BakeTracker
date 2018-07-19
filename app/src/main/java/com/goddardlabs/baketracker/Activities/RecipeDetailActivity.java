@@ -24,11 +24,11 @@ public class RecipeDetailActivity extends AppCompatActivity implements DetailPre
 
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
-        Recipe recipe = getIntent().getExtras().getParcelable(getString(R.string.BUNDLE_RECIPE_DATA));
+        Recipe recipe = getIntent().getExtras().getParcelable(getString(R.string.RECIPE_DATA));
 
         if (fragment == null) {
             Bundle bundle = new Bundle();
-            bundle.putParcelable(getString(R.string.BUNDLE_RECIPE_DATA), recipe);
+            bundle.putParcelable(getString(R.string.RECIPE_DATA), recipe);
             fragment = new DetailFragment();
             fragment.setArguments(bundle);
 
@@ -36,9 +36,9 @@ public class RecipeDetailActivity extends AppCompatActivity implements DetailPre
                     .add(R.id.fragment_container, fragment)
                     .commit();
 
-            if (getResources().getBoolean(R.bool.isTablet)) {
+            if (getResources().getBoolean(R.bool.is_tablet)) {
                 Bundle stepBundle = new Bundle();
-                stepBundle.putParcelable(getString(R.string.BUNDLE_STEP_DATA), recipe.getSteps().get(0));
+                stepBundle.putParcelable(getString(R.string.STEP_DATA), recipe.getSteps().get(0));
                 StepFragment stepFragment = new StepFragment();
                 stepFragment.setArguments(stepBundle);
 
@@ -52,16 +52,16 @@ public class RecipeDetailActivity extends AppCompatActivity implements DetailPre
 
     @Override
     public void stepSelected(ArrayList<Step> stepList, int currentStep, String recipeName) {
-        if (!getResources().getBoolean(R.bool.isTablet)) {
+        if (!getResources().getBoolean(R.bool.is_tablet)) {
             Intent intent = new Intent(this, StepsActivity.class);
-            intent.putExtra(getString(R.string.BUNDLE_STEP_DATA), stepList);
-            intent.putExtra(getString(R.string.BUNDLE_CURRENT_STEP), currentStep);
-            intent.putExtra(getString(R.string.BUNDLE_CURRENT_RECIPE), recipeName);
+            intent.putExtra(getString(R.string.STEP_DATA), stepList);
+            intent.putExtra(getString(R.string.CURRENT_STEP), currentStep);
+            intent.putExtra(getString(R.string.CURRENT_RECIPE), recipeName);
 
             startActivity(intent);
         } else {
             Bundle stepBundle = new Bundle();
-            stepBundle.putParcelable(getString(R.string.BUNDLE_STEP_DATA), stepList.get(currentStep));
+            stepBundle.putParcelable(getString(R.string.STEP_DATA), stepList.get(currentStep));
             StepFragment stepFragment = new StepFragment();
             stepFragment.setArguments(stepBundle);
 

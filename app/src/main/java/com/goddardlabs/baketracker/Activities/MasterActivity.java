@@ -8,12 +8,12 @@ import android.os.Bundle;
 
 import com.goddardlabs.baketracker.R;
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class MasterActivity extends AppCompatActivity {
     protected abstract Fragment createFragment();
 
     @LayoutRes
     protected int getLayoutResId() {
-        return R.layout.activity_base;
+        return R.layout.activity_master;
     }
 
     @Override

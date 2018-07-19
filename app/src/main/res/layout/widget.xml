@@ -8,7 +8,7 @@
               android:layout_height="match_parent">
     <TextView
         android:id="@+id/recipe_widget_title"
-        android:textSize="@dimen/text_size_widget_title"
+        android:textSize="@dimen/widget_title"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

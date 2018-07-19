@@ -33,8 +33,8 @@ public class ListFragment extends Fragment implements ListPresenterContract.View
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState != null) {
-            if (savedInstanceState.containsKey(getString(R.string.INSTANCE_KEY_RECIPE_LIST))) {
-                mRecipeList = savedInstanceState.getParcelableArrayList(getString(R.string.INSTANCE_KEY_RECIPE_LIST));
+            if (savedInstanceState.containsKey(getString(R.string.KEY_RECIPE_LIST))) {
+                mRecipeList = savedInstanceState.getParcelableArrayList(getString(R.string.KEY_RECIPE_LIST));
             }
         }
     }
@@ -46,7 +46,7 @@ public class ListFragment extends Fragment implements ListPresenterContract.View
 
         mRecipeRecyclerView = view.findViewById(R.id.recipe_recycler_view);
         mRecipeRecyclerView.setHasFixedSize(true);
-        mRecipeRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), getResources().getInteger(R.integer.recipe_list_columns)));
+        mRecipeRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), getResources().getInteger(R.integer.recipe_columns)));
 
         mListPresenter = new ListPresenter(this, new NetworkService());
 
@@ -80,7 +80,7 @@ public class ListFragment extends Fragment implements ListPresenterContract.View
 
     @Override
     public void displaySnackbarMessage(int stringResId) {
-        Snackbar snackbar = Snackbar.make(getActivity().findViewById(R.id.cl_list_container), getString(stringResId), Snackbar.LENGTH_LONG);
+        Snackbar snackbar = Snackbar.make(getActivity().findViewById(R.id.view_page_list_container), getString(stringResId), Snackbar.LENGTH_LONG);
         View snackbarView = snackbar.getView();
         snackbarView.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
         snackbar.show();
@@ -93,7 +93,7 @@ public class ListFragment extends Fragment implements ListPresenterContract.View
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putParcelableArrayList(getString(R.string.INSTANCE_KEY_RECIPE_LIST), mRecipeList);
+        outState.putParcelableArrayList(getString(R.string.KEY_RECIPE_LIST), mRecipeList);
         super.onSaveInstanceState(outState);
     }
 }

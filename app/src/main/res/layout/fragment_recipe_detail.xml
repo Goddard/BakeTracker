@@ -13,24 +13,15 @@
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true">
 
-            <include
-                android:id="@+id/tb_toolbar"
-                layout="@layout/toolbar"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <RelativeLayout
                 android:id="@+id/cv_recipe_detail_ingredient_heading_holder"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
                 app:cardPreventCornerOverlap="false"
                 app:cardUseCompatPadding="true"
                 app:cardElevation="4dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tb_toolbar">
+                app:layout_constraintRight_toRightOf="parent">
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
@@ -41,7 +32,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/ingredients_title"
-                        android:textSize="@dimen/text_size_recipe_title"
+                        android:textSize="@dimen/recipe_title"
                         android:textStyle="bold"
                         android:textColor="@color/white"
                         android:background="@color/colorPrimaryDark"
@@ -54,7 +45,7 @@
                         android:padding="15dp"/>
 
                     <LinearLayout
-                        android:background="@color/melicolor"
+                        android:background="@color/other_color_mel"
                         android:padding="15dp"
                         android:id="@+id/ll_ingredient_checklist"
                         android:layout_width="0dp"
@@ -81,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="@string/steps_title"
-                    android:textSize="@dimen/text_size_recipe_title"
+                    android:textSize="@dimen/recipe_title"
                     android:textStyle="bold"
                     android:layout_gravity="center"
                     tools:text="Steps"/>

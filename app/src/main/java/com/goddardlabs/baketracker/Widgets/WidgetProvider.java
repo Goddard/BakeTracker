@@ -17,7 +17,7 @@ public class WidgetProvider extends AppWidgetProvider {
 
     public void updateAppWidget(Context context, AppWidgetManager appWidgetManager, Recipe recipe, int appWidgetId) {
         Intent intent = new Intent(context, RecipeDetailActivity.class);
-        intent.putExtra(context.getString(R.string.BUNDLE_RECIPE_DATA), recipe);
+        intent.putExtra(context.getString(R.string.RECIPE_DATA), recipe);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);

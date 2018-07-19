@@ -9,7 +9,7 @@ import com.goddardlabs.baketracker.Presenter.ListPresenter;
 import com.goddardlabs.baketracker.R;
 import com.goddardlabs.baketracker.Widgets.WidgetService;
 
-public class MainActivity extends BaseActivity implements ListPresenter.Callbacks {
+public class MainActivity extends MasterActivity implements ListPresenter.Callbacks {
     WidgetService widgetService;
     public MainActivity() {
         widgetService = new WidgetService();
@@ -23,7 +23,7 @@ public class MainActivity extends BaseActivity implements ListPresenter.Callback
     @Override
     public void recipeSelected(Recipe recipe) {
         Intent intent = new Intent(this, RecipeDetailActivity.class);
-        intent.putExtra(getString(R.string.BUNDLE_RECIPE_DATA), recipe);
+        intent.putExtra(getString(R.string.RECIPE_DATA), recipe);
 
         widgetService.startActionUpdateRecipeWidgets(this, recipe);
         startActivity(intent);

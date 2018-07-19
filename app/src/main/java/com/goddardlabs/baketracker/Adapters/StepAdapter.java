@@ -47,7 +47,7 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepHolder> {
         }
 
         if(holder.mStep.getId() == 0) {
-            holder.mBinding.tvStepListStepNumber.setText("   ");
+            holder.mBinding.tvStepListStepNumber.setText("  ");
         } else {
             holder.mBinding.tvStepListStepNumber.setText(String.valueOf(holder.mStep.getId()) + ": ");
             holder.mBinding.tvStepListStepShortDesc.setText(holder.mStep.getShortDescription());
@@ -77,7 +77,7 @@ public class StepAdapter extends RecyclerView.Adapter<StepAdapter.StepHolder> {
         }
     }
 
-    public int getStepAdapterCurrentPosition(){ return mSelectedPosition; }
+    public int getStepCurrentPosition(){ return mSelectedPosition; }
 
-    public void setStepAdapterCurrentPosition(int savedPosition){ mSelectedPosition = savedPosition; }
+    public void setStepCurrentPosition(int savedPosition){ mSelectedPosition = savedPosition; }
 }

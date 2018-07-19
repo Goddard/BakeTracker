@@ -11,9 +11,9 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_margin="8dp"
-        android:contentDescription="@string/appwidget_text"
-        android:text="@string/appwidget_text"
-        android:textSize="@dimen/text_size_widget_title"
+        android:contentDescription="@string/app_widget_text"
+        android:text="@string/app_widget_text"
+        android:textSize="@dimen/widget_title"
         android:textStyle="bold|italic"/>
 
 </RelativeLayout>

@@ -56,7 +56,7 @@ public class ListPresenter implements ListPresenterContract.Presenter {
             @Override
             public void onError(Throwable e) {
                 if(mView.isActive()) {
-                    mView.displaySnackbarMessage(R.string.network_error_recipes);
+                    mView.displaySnackbarMessage(R.string.network_error);
                 }
             }
             @Override

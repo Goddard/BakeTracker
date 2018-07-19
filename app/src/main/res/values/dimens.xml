@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="widget_margin">8dp</dimen>
-    <dimen name="text_size_recipe_title">18sp</dimen>
-    <dimen name="image_size_small_icon">15dp</dimen>
-    <dimen name="text_size_small_icon">14sp</dimen>
-    <dimen name="image_size_recipe_circle">100dp</dimen>
-    <dimen name="image_size_step_circle">75dp</dimen>
-    <dimen name="text_size_step_short_desc">14sp</dimen>
-    <dimen name="text_size_step_long_desc">20sp</dimen>
-    <dimen name="text_size_widget_title">14sp</dimen>
-    <dimen name="text_size_widget_body">12sp</dimen>
+    <dimen name="image_size_small_icon">14dp</dimen>
+    <dimen name="text_size_small_icon">13sp</dimen>
+    <dimen name="image_size_recipe_circle">98dp</dimen>
+    <dimen name="step_circle">78dp</dimen>
+    <dimen name="step_short_desc">16sp</dimen>
+    <dimen name="widget_title">15sp</dimen>
+    <dimen name="step_long_desc">19sp</dimen>
+    <dimen name="recipe_title">16sp</dimen>
+    <dimen name="widget_body">13sp</dimen>
 </resources>

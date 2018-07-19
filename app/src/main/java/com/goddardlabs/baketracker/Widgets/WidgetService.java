@@ -20,8 +20,8 @@ public class WidgetService extends IntentService {
 
     public void startActionUpdateRecipeWidgets(Context context, Recipe recipe) {
         Intent intent = new Intent(context, WidgetService.class);
-        intent.setAction(context.getString(R.string.RECIPE_WIDGET_ACTION_UPDATE));
-        intent.putExtra(context.getString(R.string.BUNDLE_RECIPE_WIDGET_DATA), recipe);
+        intent.setAction(context.getString(R.string.RECIPE_WIDGET_UPDATE));
+        intent.putExtra(context.getString(R.string.RECIPE_WIDGET_DATA), recipe);
         context.startService(intent);
     }
 
@@ -29,8 +29,8 @@ public class WidgetService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         if (intent != null) {
             final String action = intent.getAction();
-            if (getString(R.string.RECIPE_WIDGET_ACTION_UPDATE).equals(action) && intent.getParcelableExtra(getString(R.string.BUNDLE_RECIPE_WIDGET_DATA)) != null) {
-                handleActionUpdateWidgets((Recipe)intent.getParcelableExtra(getString(R.string.BUNDLE_RECIPE_WIDGET_DATA)));
+            if (getString(R.string.RECIPE_WIDGET_UPDATE).equals(action) && intent.getParcelableExtra(getString(R.string.RECIPE_WIDGET_DATA)) != null) {
+                handleActionUpdateWidgets((Recipe)intent.getParcelableExtra(getString(R.string.RECIPE_WIDGET_DATA)));
             }
         }
     }
