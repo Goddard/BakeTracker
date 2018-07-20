@@ -3,9 +3,12 @@ package com.goddardlabs.baketracker.Fragments;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -78,8 +81,10 @@ public class DetailFragment extends Fragment implements DetailPresenterContract.
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_recipe_detail, container, false);
         final View view = binding.getRoot();
 
-//        binding.toolbar_include_container.toolbar.setTitle(mRecipe.getName());
-//        ((AppCompatActivity) getActivity()).setSupportActionBar(binding.toolbar_include_container.toolbar);
+        binding.toolbarContainer.toolbar.setTitle(mRecipe.getName());
+        ((AppCompatActivity) getActivity()).setSupportActionBar(binding.toolbarContainer.toolbar);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if(mIngredientList.size() > 0) {
             for(TextView tvIngredientView : mIngredientList) {

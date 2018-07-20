@@ -25,6 +25,17 @@ public class StepsActivity extends AppCompatActivity {
     public StepsActivity() { }
 
     @Override
+    public boolean onNavigateUp(){
+        this.onBackPressed();
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_step_viewpager);
@@ -33,8 +44,9 @@ public class StepsActivity extends AppCompatActivity {
         final int currentStep = getIntent().getExtras().getInt(getString(R.string.CURRENT_STEP));
         String currentRecipeName = getIntent().getExtras().getString(getString(R.string.CURRENT_RECIPE));
 
-//        setSupportActionBar(binding.toolbar_include_container.toolbar);
-//        binding.toolbar_include_container.toolbar.setTitle(currentRecipeName);
+        setSupportActionBar(binding.toolbarContainer.toolbar);
+        binding.toolbarContainer.toolbar.setTitle(currentRecipeName);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TabLayout tabLayout = findViewById(R.id.tl_activity_step_viewpager);
         for(Step step : stepList) {
@@ -43,15 +55,14 @@ public class StepsActivity extends AppCompatActivity {
                 tabLayout.addTab(tabLayout.newTab().setText("Intro"));
             }
             else {
-                tabLayout.addTab(tabLayout.newTab().setText(
-                        String.format(getString(R.string.step_number_format), (step.getId()))));
+                tabLayout.addTab(tabLayout.newTab().setText(String.format(getString(R.string.step_number_format), (step.getId()))));
             }
         }
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-//            binding.toolbar_include_container.toolbar.setVisibility(View.GONE);
+            binding.toolbarContainer.toolbar.setVisibility(View.GONE);
             binding.tlActivityStepViewpager.setVisibility(View.GONE);
         }
 

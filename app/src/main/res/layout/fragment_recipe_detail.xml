@@ -13,6 +13,13 @@
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true">
 
+            <include
+                android:id="@+id/toolbar_container"
+                layout="@layout/toolbar"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
             <RelativeLayout
                 android:id="@+id/cv_recipe_detail_ingredient_heading_holder"
                 android:layout_width="0dp"
@@ -21,7 +28,8 @@
                 app:cardUseCompatPadding="true"
                 app:cardElevation="4dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent">
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar_container">
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"

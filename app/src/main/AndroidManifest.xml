@@ -17,9 +17,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Activities.RecipeDetailActivity"></activity>
+        <activity android:name=".Activities.DetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.MainActivity" />
+        </activity>
 
-        <activity android:name=".Activities.StepsActivity"></activity>
+        <activity android:name=".Activities.StepsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.MainActivity" />
+        </activity>
 
         <receiver android:name=".Widgets.WidgetProvider">
             <intent-filter>

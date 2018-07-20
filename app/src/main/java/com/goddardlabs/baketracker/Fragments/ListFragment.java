@@ -43,6 +43,7 @@ public class ListFragment extends Fragment implements ListPresenterContract.View
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_recipe_list, container, false);
         final View view = binding.getRoot();
+//        binding.toolbarContainer.toolbar.setTitle(getContext().getResources().getString(R.string.app_name));
 
         mRecipeRecyclerView = view.findViewById(R.id.recipe_recycler_view);
         mRecipeRecyclerView.setHasFixedSize(true);
@@ -58,8 +59,7 @@ public class ListFragment extends Fragment implements ListPresenterContract.View
         });
         mRecipeRecyclerView.setAdapter(mAdapter);
 
-        //TODO:swipe to force refresh?
-        if(mRecipeList==null || mRecipeList.size()==0) {
+        if(mRecipeList == null || mRecipeList.size() == 0) {
             mListPresenter.fetchRecipes();
         }
         return view;

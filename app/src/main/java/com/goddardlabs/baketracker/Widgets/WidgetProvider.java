@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;
 
-import com.goddardlabs.baketracker.Activities.RecipeDetailActivity;
+import com.goddardlabs.baketracker.Activities.DetailActivity;
 import com.goddardlabs.baketracker.Parcelables.Ingredient;
 import com.goddardlabs.baketracker.Parcelables.Recipe;
 import com.goddardlabs.baketracker.R;
@@ -16,7 +16,7 @@ public class WidgetProvider extends AppWidgetProvider {
     public WidgetProvider() {}
 
     public void updateAppWidget(Context context, AppWidgetManager appWidgetManager, Recipe recipe, int appWidgetId) {
-        Intent intent = new Intent(context, RecipeDetailActivity.class);
+        Intent intent = new Intent(context, DetailActivity.class);
         intent.putExtra(context.getString(R.string.RECIPE_DATA), recipe);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
